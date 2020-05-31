@@ -1,25 +1,23 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router,  Route } from "react-router-dom";
+import Button from "@material-ui/core/Button"
 import './App.css';
-import Navbar from './router/Navbar';
-import About from "./router/About"
-import Home from "./router/Home"
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import Header from "./header/header";
+
 
 class App extends Component {
+  
   render(){
     return (
       <div className="App">
-          <Router>
             <div>
-              <Navbar /> <hr />
-  
-              <Route exact path="/" component={Home} />
-              <Route path="/About" render={ () => <About name={"TOM"} />} />
+              <Header />
             </div>
-          </Router>
+
+
       </div>
     );
   }  
-  }
+}
 
 export default App;
