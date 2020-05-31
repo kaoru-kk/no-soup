@@ -21,7 +21,12 @@ const useStyles = makeStyles((theme) => ({
     headerLink: {
         color: "inherit",
         textDecoration: "none",
-        marginRight: "10px"
+        marginRight: "10px",
+        fontSize: "16px",
+        fontWeight: "bold"
+    },
+    toolbarButtons: {
+        marginLeft: "auto"
     }
 }));
 const Home = () => (
@@ -42,6 +47,12 @@ const Contact = () => (
     </div>
 )
 
+const Login = () => (
+    <div>
+        <h2>login</h2>
+    </div>
+)
+
 export default function ButtonAppBar() {
   const classes = useStyles();
 
@@ -52,18 +63,20 @@ export default function ButtonAppBar() {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            <Link to='/' className={classes.headerLink}>Home</Link>
-            <Link to='/about' className={classes.headerLink}>About</Link>
-            <Link to='/contact' className={classes.headerLink}>Contact</Link>
-          </Typography>
-          <Button color="inherit">Login</Button>
+          
+          <div className={classes.toolbarButtons}>
+            <Link to='/' className={classes.headerLink}>TOP</Link>
+            <Link to='/about' className={classes.headerLink}>no-soupについて</Link>
+            <Link to='/contact' className={classes.headerLink}>近くのお店を探す</Link>
+            <Link to='/login' className={classes.headerLink}>ログイン</Link>
+            </div>          
         </Toolbar>
       </AppBar>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/contact' component={Contact} />
+            <Route exact path='/login' component={Login} />
 
-        <Route exact path='/' component={Home} />
-        <Route exact path='/about' component={About} />
-        <Route exact path='/contact' component={Contact} />
     </div>
   );
 }
