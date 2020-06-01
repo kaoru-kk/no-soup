@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Button from "@material-ui/core/Button"
 import './App.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import Header from "./header/header";
+import Header from "./Header/Header";
 
 
 class App extends Component {
@@ -13,8 +13,6 @@ class App extends Component {
             <div>
               <Header />
             </div>
-
-
       </div>
     );
   }  
