@@ -5,6 +5,7 @@ import {Link, Route} from "react-router-dom";
 import TopPage from "../Top/TopComponent";
 import AboutPage from "../About/AboutComponent";
 import LogInPage from "../Authentication/LogInComponent";
+import NewShopComponent from "../Shop/NewShop/NewShopComponent"
 
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -70,7 +71,7 @@ function ResponsiveDrawer(props) {
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
     const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
+        setMobileOpen(!mobileOpen);
     };
 
     const drawer = (
@@ -78,7 +79,7 @@ function ResponsiveDrawer(props) {
             <div className={classes.toolbar} />
             <Divider />
             <List>
-            {[['Topページ', "/"], ['no-soupについて',"/about"],  ['近くのお店を探す', "search"], ['会員登録', "/login"]].map((contents, index) => (
+            {[['Topページ', "/"], ['no-soupについて',"/about"],  ['近くのお店を探す', "search"], ['会員登録', "/login"], ["お店の登録をする", "/shops/new"]].map((contents, index) => (
                 <Link to={contents[1]} className={classes.navbarLink}>
                     <ListItem button key={contents}>
                     <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
@@ -146,7 +147,9 @@ function ResponsiveDrawer(props) {
         <div className={classes.toolbar} />
         <Route exact path='/' component={TopPage} />
         <Route exact path='/about' component={AboutPage} />
+        {/* <Route exact path='/login' component={searchShop} /> */}
         <Route exact path='/login' component={LogInPage} />
+        <Route exact path='/shops/new' component={NewShopComponent} />
     </main>
     </div>
     );
