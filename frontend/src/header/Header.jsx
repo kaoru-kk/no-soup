@@ -48,7 +48,6 @@ const useStyles = makeStyles((theme) => ({
         display: 'none',
         },
     },
-    // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
     drawerPaper: {
         width: drawerWidth,
@@ -57,6 +56,11 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         padding: theme.spacing(3),
     },
+    navbarLink: {
+        textDecoration: "none",
+        color: "rgba(0, 0, 0, 0.9)"
+    },
+    
 }));
 
 function ResponsiveDrawer(props) {
@@ -75,22 +79,13 @@ function ResponsiveDrawer(props) {
             <Divider />
             <List>
             {[['Topページ', "/"], ['no-soupについて',"/about"],  ['近くのお店を探す', "search"], ['会員登録', "/login"]].map((contents, index) => (
-                <ListItem button key={contents}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                    <Link to={contents[1]}>
-                        <ListItemText primary={contents[0]} />
-                    </Link>
-                </ListItem>
-            ))}
-            </List>
-            <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
+                <Link to={contents[1]} className={classes.navbarLink}>
+                    <ListItem button key={contents}>
                     <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                    <ListItemText primary={text} />
+                            <ListItemText primary={contents[0]} />
                     </ListItem>
-                ))}
+                </Link>
+            ))}
             </List>
         </div>
     );
@@ -151,7 +146,6 @@ function ResponsiveDrawer(props) {
         <div className={classes.toolbar} />
         <Route exact path='/' component={TopPage} />
         <Route exact path='/about' component={AboutPage} />
-        {/* <Route exact path='/contact' component={Contact} /> */}
         <Route exact path='/login' component={LogInPage} />
     </main>
     </div>
@@ -159,99 +153,7 @@ function ResponsiveDrawer(props) {
 }
 
 ResponsiveDrawer.propTypes = {
-    /**
-    * Injected by the documentation to work in an iframe.
-    * You won't need it on your project.
-    */
     window: PropTypes.func,
 };
 
 export default ResponsiveDrawer;
-
-// import React, {useState} from "react";
-// import {Link, Route} from "react-router-dom";
-
-// import TopPage from "../Top/TopComponent";
-// import AboutPage from "../About/AboutComponent";
-// import LogInPage from "../Authentication/LogInComponent";
-
-// import { makeStyles } from '@material-ui/core/styles';
-// import AppBar from '@material-ui/core/AppBar';
-// import Toolbar from '@material-ui/core/Toolbar';
-// import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
-
-// const Contact = () => (
-//     <div>
-//         <h2>contact</h2>    
-//     </div>
-// )
-
-
-// export default function Header() {
-//     //state変数を定義できる
-//     var [openMenu, setCount] = useState(false)
-//     const classes = useStyles();
-
-//     return (
-//         <div className={classes.root}>
-//             <AppBar position="static" className={classes.headerColor}>
-//                 <Toolbar>
-//                     <IconButton 
-//                     edge="start"
-//                     className={classes.menuButton}
-//                     color="inherit"
-//                     aria-label="menu"
-//                     onClick={() => setCount(openMenu? openMenu = false : openMenu = true)}>
-//                         <MenuIcon />
-//                     </IconButton>
-//                     {
-//                         openMenu?
-//                         <div>aaaa</div>
-//                         :
-//                         <div>bbbb</div>
-//                     }
-                    
-//                     <div className={classes.toolbarButtons}>
-//                         <div>{openMenu}</div>
-                        
-//                         <Link to='/' className={classes.headerLink}>TOP</Link>
-//                         <Link to='/about' className={classes.headerLink}>no-soupについて</Link>
-//                         <Link to='/contact' className={classes.headerLink}>近くのお店を探す</Link>
-//                         <Link to='/login' className={classes.headerLink}>ログイン</Link>
-//                     </div>          
-//                 </Toolbar>
-//             </AppBar>
-//                 <Route exact path='/' component={TopPage} />
-//                 <Route exact path='/about' component={AboutPage} />
-//                 <Route exact path='/contact' component={Contact} />
-//                 <Route exact path='/login' component={LogInPage} />
-//         </div>
-//     );
-// }
-
-
-// const useStyles = makeStyles((theme) => ({
-//     root: {
-//         flexGrow: 1,
-//     },
-//     headerColor: {
-//         backgroundColor: "#fda300"
-//     },
-//     menuButton: {
-//         marginRight: theme.spacing(2),
-//     },
-//     title: {
-//         flexGrow: 1,
-//     },
-//     headerLink: {
-//         color: "inherit",
-//         textDecoration: "none",
-//         marginRight: "15px",
-//         fontSize: "16px",
-//         fontWeight: "bold"
-//     },
-//     toolbarButtons: {
-//         marginLeft: "auto"
-//     }
-// }));

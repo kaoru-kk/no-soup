@@ -1,0 +1,12 @@
+.rightSide {
+    width: 25%;
+}
+.sidebarItem {
+    margin-bottom: 20px;
+}
+.sidebarItemFixed {
+    position: sticky;
+    margin-bottom: 0;
+    top: 10px;
+    z-index: 1;
+}

@@ -1,11 +1,49 @@
 import React from "react";
 import ReactDom from "react-dom";
-
+import "./RightComponent.css"
 
 const RightComponent = () => {
     return(
-        <div>
-            <div>右側だよー</div>
+        <div className="rightSide">
+            <div className="sidebarItem">
+            kokokoko
+            </div>
+            <div className="sidebarItem sidebarItemFixed">
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+                <p>aasdfasdff</p>
+            </div>
         </div>
     )
 }
