@@ -1,5 +1,9 @@
 import React from "react";
 
+function Welcome(props){
+    return <h1>hello ,{ props.intro }</h1>
+}
+
 const AboutComponent = () => {
     return(
         <div>
@@ -8,6 +12,9 @@ const AboutComponent = () => {
             <br></br>
             背景画像は固定で、
             縦書きで文字を書きたい
+            <Welcome intro="jas" />
+            <Welcome intro="taro" />
+            <Welcome intro="miki" />
         </div>
     )
 }

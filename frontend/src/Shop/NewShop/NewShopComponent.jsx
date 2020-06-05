@@ -40,13 +40,14 @@ const NewShopComponent = () => {
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)}>
-                {errors.shopName && "店名の入力は必須です。"}<br />
-                店名　　　<input type="text" name="shopName" ref={register({ required: true })} /><br />
+                {errors.shopName && <div style={{ color: "red" }}>店名の入力は必須です。</div>}
+                店名　　　<input type="text" name="shopName" ref={register({ required: true })} /><br /><br />
                 
-                {errors.AddressNumber && "郵便番号の入力は必須です。"}<br />
-                郵便番号　<input type="text" name="zipcode1" id="zipcode1" placeholder="例：101" ref={register({ required: true })} /> - <input type="text" name="zipcode2" id="zipcode2" placeholder="例：0021" ref={register({ required: true })} /><br />
+                { errors.zipcode1  && <div style={{ color: "red" }}>郵便番号の入力は必須です。</div>}
+                {errors.zipcode2 && <div style={{ color: "red" }}>郵便番号の入力は必須です。</div>}
+                郵便番号　<input type="text" name="zipcode1" id="zipcode1" placeholder="例：101" ref={register({ required: true })} /> - <input type="text" name="zipcode2" id="zipcode2" placeholder="例：0021" ref={register({ required: true })} /><br /><br />
                 
-                {errors.prefecture && "都道府県の入力は必須です。"}<br />
+                {errors.prefecture && <div style={{ color: "red" }}>都道府県の入力は必須です。</div>}
                 都道府県　<select name="prefecture" id="prefecture" size="1" ref={register({ required: true })}>
                             <option value="">---選択</option>
                             <option value="1">北海道</option>
@@ -97,15 +98,14 @@ const NewShopComponent = () => {
                             <option value="46">鹿児島県</option>
                             <option value="47">沖縄県</option>
                             <option value="99">海外</option>
-                        </select><br />
+                        </select><br /><br />
                 
-                {errors.city && "市町村の入力は必須です。"}<br />
-                市町村　　<input type="text" name="city" ref={register({ required: true })} /><br />
+                {errors.city && <div style={{ color: "red" }}>市町村の入力は必須です。</div>}
+                市町村　　<input type="text" name="city" ref={register({ required: true })} /><br /><br />
                 
-                {errors.block && "番地の入力は必須です。"}<br />
-                番地　　　<input type="text" name="address" id="address" ref={register({ required: true })} /><br />
+                {errors.address && <div style={{ color: "red" }}>番地の入力は必須です。</div>}
+                番地　　　<input type="text" name="address" id="address" ref={register({ required: true })} /><br /><br />
                 
-                <br />
                 建物　　　<input type="text" name="building" ref={register} /><br />
 
                 <input type="submit"/>
