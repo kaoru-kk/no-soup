@@ -1,0 +1,29 @@
+/* .japanText{
+    display: table-caption;
+    font-size: 20px;
+    padding: 5px;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    position: absolute;
+    right: 0;
+} */
+
+/* .japanText {
+    font-family: 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'HGP明朝B', serif;
+    -webkit-font-feature-settings: 'pkna';
+            font-feature-settings: 'pkna';
+    font-size: 17px;
+    line-height: 1.9;
+    letter-spacing: 0.03em;
+    text-indent: 1em;
+    margin-left: 30px;
+    display: inline;
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+  }
+
+  ruby {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
+  } */
