@@ -33,7 +33,8 @@ export default function Forms(){
         <>
             <h1>店舗情報入力</h1>
             <Form onSubmit={onSubmit}>
-            <span>お店の名前</span><Input name="shopName" />
+            <span>お店の名前</span>
+            <Input name="shopName" />
             <Address name="Address" />
             <Input type="submit" value="Submit" />
             </Form>
